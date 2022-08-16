@@ -1,0 +1,13 @@
+properties:
+  status:
+    type: number
+  code:
+    type: number
+  message:
+    type: string
+  extra:
+    type: object
+  validationErrors:
+    type: array
+    items:
+      $ref: "./ValidationError.yaml"

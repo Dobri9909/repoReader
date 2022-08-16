@@ -1,0 +1,15 @@
+type: object
+required:
+  - name
+  - ownerLogin
+  - branches
+properties:
+  name:
+    type: string
+  ownerLogin:
+    type: string
+  branches:
+    type: array
+    items:
+      $ref: "./Commits.yaml"
+

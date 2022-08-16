@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "target": "es2021",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "outDir": "build",
+    "strict": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "useUnknownInCatchVariables": false,
+    "paths": {
+      "@application/*": ["app/application/*"],
+      "@domain/*": ["app/domain/*"],
+      "@infrastructure/*": ["app/infrastructure/*"],
+      "@interface/*": ["app/interface/*"],
+      "@tests/*": ["tests/*"],
+      "@config": ["config"]
+    },
+    "plugins": [
+      { "transform": "typescript-is/lib/transform-inline/transformer" }
+    ]
+  },
+  "include": [
+    "./app/**/*.ts",
+    "./tests/**/*.ts",
+    "./config/config.*.ts",
+    "./tests/jest-extensions/types.d.ts",
+    "index.ts"
+  ]
+}

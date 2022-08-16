@@ -1,0 +1,10 @@
+openapi: "3.0.0"
+servers:
+  - url: /v1
+info:
+  title: Repository Reader API
+  version: '1.0.0'
+  description: |
+paths:
+  /listRepositories:
+    $ref: "./paths/extractRepositoriesData.yaml"

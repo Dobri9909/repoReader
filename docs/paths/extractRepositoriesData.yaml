@@ -1,0 +1,48 @@
+get:
+  operationId: listRepositories
+  description: |
+    Returns users repository data.
+  tags:
+    - Repositories
+  parameters:
+    - in: query
+      name: source
+      description: Source where to take repository data from like "github"
+      schema:
+        type: string
+        default: github
+    - in: query
+      name: username
+      schema:
+        type: string
+  responses:
+    "200":
+      description: Successfully returned user all branches.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/Branches.yaml"
+    "400":
+      description: |
+        * (#3001) Mandatory parameters not provided or of incorrect type: source.
+        * (#3002) Mandatory parameters not provided or of incorrect type: username.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/APIError.yaml"
+    "404":
+      description: |
+        * (#1008) No repositories for that user found.
+        * (#1009) Cannot determine client based on that source.
+    "406":
+      description: (#1002) Invalid Content-Type - must be application/json.
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/APIError.yaml"
+    "500":
+      description: (#1000) General error (don't know what happened).
+      content:
+        application/json:
+          schema:
+            $ref: "../schemas/APIError.yaml"

@@ -1,0 +1,10 @@
+type: object
+required:
+  - branchName
+  - commitSha
+properties:
+  branchName:
+    type: string
+  commitSha:
+    type: string
+

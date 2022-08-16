@@ -1,0 +1,7 @@
+properties:
+  code:
+    type: number
+  field:
+    type: string
+  message:
+    type: string
